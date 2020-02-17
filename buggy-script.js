@@ -19,13 +19,16 @@ if (!fs.existsSync(target)) {
 linesInSource.forEach(line => {
   // get the content of the lines, first word is a filename, rest is content
   const [ filename, ...contentArr ] = line.split(' ');
+
   // construct the full path for the file to create
   const newFilePath = path.join(__dirname, target, filename);
 
   // write the file and it's contents
   fs.writeFileSync(
     newFilePath,
-    contentArr,
+    // joins the array into a string, so instead of ["Hello,", "world"] it is "Hello, world"
+    // this prevents the bug we were having for any content that had more than one item in the array
+    contentArr.join(' '), 
     { flag: 'w+', encoding: 'utf-8' }
   );
 });
