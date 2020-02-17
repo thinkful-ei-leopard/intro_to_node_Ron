@@ -1,0 +1,11 @@
+{
+  "name": "intro_to_node",
+  "version": "1.0.0",
+  "description": "Checkpoint for Thinkful coding bootcamp, intro to Server-side programming with Node",
+  "main": "buggy-script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ron Martin",
+  "license": "ISC"
+}
